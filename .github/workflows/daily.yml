@@ -7,18 +7,14 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages-deploy
+  group: daily-refresh
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
       - uses: actions/checkout@v4
 
@@ -42,16 +38,3 @@ jobs:
           else
             echo "no data changes"
           fi
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
