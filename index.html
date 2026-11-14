@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Signal — Daily GitHub Radar for Agent Tooling</title>
+<meta name="description" content="A morning radar of trending GitHub projects for AI agents: skills, frameworks, context/memory tools, MCP servers and the Hermes ecosystem — scored against our actual stack.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agent Signal — Daily GitHub Radar">
+<meta property="og:description" content="Trending agent tooling on GitHub, refreshed every morning at 05:00 ICT.">
+<link rel="canonical" href="https://vaicauchuyentreninternet-crypto.github.io/agent-signal/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-grid">
+    <div>
+      <p class="kicker">Morning radar · 05:00 ICT</p>
+      <h1>Agent Signal</h1>
+      <p class="lede">Trending GitHub tooling for AI agents — scored against the stack we actually run.</p>
+    </div>
+    <div class="head-meta">
+      <p class="stamp">Updated <time id="updated" datetime="">—</time></p>
+      <p class="stamp dim">Source: GitHub Search API · no token on first run</p>
+      <a class="ghost-btn" href="methodology.html">Methodology &amp; scoring</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="brief" aria-labelledby="brief-h">
+    <h2 id="brief-h">Morning brief</h2>
+    <ol id="brief-list" class="brief-list"><li>Loading…</li></ol>
+  </section>
+
+  <div id="sections"></div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <p>Auto-generated from public GitHub data. Scores are <strong>not endorsements</strong> — see
+      <a href="methodology.html">methodology</a> for the exact formula and its limits.</p>
+    <p class="dim">Curated fit scores live in <code>config/fit_scores.yaml</code>. Refresh: daily 22:00 UTC via GitHub Actions.</p>
+  </div>
+</footer>
+
+<script defer src="js/main.js"></script>
+</body>
+</html>

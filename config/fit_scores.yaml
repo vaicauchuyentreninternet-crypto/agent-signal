@@ -1,0 +1,52 @@
+# Curated "fit" scores (0-10) for repos evaluated against the current stack:
+# Hermes Agent (skills/taps/MCP), portfolio/dashboard/stock-lab projects, ANCARAT ops.
+# Default when not listed: 5.0 ("not curated yet").
+fit_scores:
+  anthropics/skills:
+    score: 9.0
+    why: "Official Agent Skills standard; directly installable into Hermes via skills taps."
+  addyosmani/agent-skills:
+    score: 8.5
+    why: "Production-grade engineering skill patterns; drop-in for code-review/planning loops."
+  ComposioHQ/awesome-claude-skills:
+    score: 7.0
+    why: "Curated skill catalogue; good source for discovering workflow skills to port."
+  K-Dense-AI/scientific-agent-skills:
+    score: 7.0
+    why: "~480 validated science skills, installable as a Hermes tap."
+  VoltAgent/awesome-openclaw-skills:
+    score: 6.0
+    why: "Large skill index; mostly OpenClaw-specific, needs adaptation."
+  sickn33/agentic-awesome-skills:
+    score: 6.5
+    why: "Broad skill library; useful patterns for agent memory and planning."
+  reason-machines/ai-agent-skills:
+    score: 8.0
+    why: "Auto-generates SKILL.md from trending repos every 30 min; can feed our radar."
+  NousResearch/hermes-agent:
+    score: 10.0
+    why: "Our own runtime; skills/plugins/cron all live here."
+  Aitherium/awskills:
+    score: 8.0
+    why: "Portable agent skills pack; several directly useful (git hygiene, local inference)."
+  mcpbeat/best-mcp-servers:
+    score: 7.5
+    why: "Ranks MCP servers by uptime + installs; best discovery source for MCP tooling."
+  modelcontextprotocol/servers:
+    score: 7.0
+    why: "Reference MCP implementations; useful as templates for our own servers."
+  ChromeDevTools/chrome-devtools-mcp:
+    score: 8.5
+    why: "Lets Hermes debug/profile pages in Chrome; pairs with our bridge workflow."
+  microsoft/playwright-mcp:
+    score: 7.5
+    why: "Real browser automation via MCP; alternative path to chrome-bridge."
+  upstash/context7:
+    score: 7.0
+    why: "Up-to-date library docs for agents; reduces hallucinated APIs."
+  github/github-mcp-server:
+    score: 8.5
+    why: "Direct repo/issue/Actions access; our deploys and reviews depend on this."
+  headroomlabs-ai/headroom:
+    score: 8.0
+    why: "Token compression for tool outputs; cuts our daily context cost."

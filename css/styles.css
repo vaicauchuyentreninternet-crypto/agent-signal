@@ -1,0 +1,96 @@
+:root {
+  --bg: #0f1419;
+  --panel: #161d24;
+  --panel-2: #1b232c;
+  --line: #26313c;
+  --ink: #e8eef2;
+  --muted: #9fb0bd;
+  --faint: #74889a;
+  --acc: #c9a24b;
+  --good: #5cc98a;
+  --warn: #e0b34a;
+  --bad: #8fa0ae;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+a { color: var(--acc); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+
+/* Header */
+.site-head { border-bottom: 1px solid var(--line); padding: 44px 0 30px; }
+.head-grid { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: end; }
+.kicker { margin: 0 0 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--faint); }
+h1 { margin: 0; font-size: clamp(34px, 5vw, 54px); line-height: 1.02; letter-spacing: -0.02em; }
+.lede { margin: 12px 0 0; color: var(--muted); max-width: 56ch; }
+.head-meta { text-align: right; }
+.stamp { margin: 0; font-size: 13px; color: var(--muted); }
+.dim { color: var(--faint); }
+.ghost-btn {
+  display: inline-block; margin-top: 10px; padding: 7px 12px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-size: 13px;
+}
+.ghost-btn:hover { border-color: var(--acc); }
+
+/* Sections */
+main.wrap { padding: 30px 0 60px; }
+h2 { font-size: 22px; letter-spacing: -0.01em; margin: 0 0 6px; }
+h3 { font-size: 18px; }
+.blurb { color: var(--muted); margin: 0 0 18px; max-width: 70ch; }
+section.block { margin-top: 44px; }
+
+/* Brief */
+.brief { border: 1px solid var(--line); background: var(--panel); border-radius: var(--radius); padding: 22px 24px; }
+.brief-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 10px; }
+.brief-list li { color: var(--muted); }
+.brief-list strong { color: var(--ink); }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; display: flex; flex-direction: column; gap: 8px;
+}
+.card:hover { border-color: #384652; }
+.card-top { display: flex; gap: 10px; align-items: start; justify-content: space-between; }
+.card-name { font-weight: 650; font-size: 16px; }
+.card-name a { color: var(--ink); text-decoration: none; }
+.card-name a:hover { color: var(--acc); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 12.5px; color: var(--faint); align-items: center; }
+.chip { padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); }
+.chip.delta { color: var(--good); border-color: #2c4a3a; }
+.chip.new { color: var(--acc); border-color: #4a3f26; }
+.badge {
+  font-variant-numeric: tabular-nums; font-weight: 700; font-size: 13px;
+  padding: 3px 9px; border-radius: 999px; border: 1px solid transparent;
+}
+.badge.hi { color: #06281a; background: var(--good); }
+.badge.mid { color: #2a2006; background: var(--warn); }
+.badge.low { color: #dfe7ec; background: var(--bad); }
+.blurb-sm { margin: 0; color: var(--muted); font-size: 14px; }
+.fit { margin: 0; font-size: 13.5px; color: var(--ink); border-left: 2px solid var(--acc); padding-left: 10px; }
+.fit-label { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.tag { font-size: 11.5px; color: var(--faint); border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; }
+
+/* Footer */
+.site-foot { border-top: 1px solid var(--line); padding: 26px 0 40px; font-size: 13.5px; color: var(--muted); }
+.foot-grid p { margin: 0 0 8px; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .92em; color: var(--ink); }
+
+@media (max-width: 640px) {
+  .head-meta { text-align: left; }
+  .wrap { width: calc(100% - 28px); }
+  .grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
