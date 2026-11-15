@@ -1,52 +1,57 @@
-# Curated "fit" scores (0-10) for repos evaluated against the current stack:
-# Hermes Agent (skills/taps/MCP), portfolio/dashboard/stock-lab projects, ANCARAT ops.
-# Default when not listed: 5.0 ("not curated yet").
+# Curated "fit" scores (0-10) — curator: Hermes + chủ nhân.
+# Ngưỡng: >=8 plug được ngay vào stack hiện tại; 5-7 cần verify/kế hoạch; <5 chỉ theo dõi.
 fit_scores:
-  anthropics/skills:
-    score: 9.0
-    why: "Official Agent Skills standard; directly installable into Hermes via skills taps."
-  addyosmani/agent-skills:
-    score: 8.5
-    why: "Production-grade engineering skill patterns; drop-in for code-review/planning loops."
-  ComposioHQ/awesome-claude-skills:
-    score: 7.0
-    why: "Curated skill catalogue; good source for discovering workflow skills to port."
-  K-Dense-AI/scientific-agent-skills:
-    score: 7.0
-    why: "~480 validated science skills, installable as a Hermes tap."
-  VoltAgent/awesome-openclaw-skills:
-    score: 6.0
-    why: "Large skill index; mostly OpenClaw-specific, needs adaptation."
-  sickn33/agentic-awesome-skills:
-    score: 6.5
-    why: "Broad skill library; useful patterns for agent memory and planning."
-  reason-machines/ai-agent-skills:
-    score: 8.0
-    why: "Auto-generates SKILL.md from trending repos every 30 min; can feed our radar."
   NousResearch/hermes-agent:
     score: 10.0
-    why: "Our own runtime; skills/plugins/cron all live here."
+    why: "Chính runtime Hermes ta đang chạy; theo dõi release và tương thích gateway."
+  anthropics/skills:
+    score: 9.0
+    why: "Chuẩn Agent Skills; cài tap vào Hermes, lọc skill cụ thể trước khi cài."
+  addyosmani/agent-skills:
+    score: 8.5
+    why: "Pattern kỹ thuật production; dùng ngay cho code-review/planning loop."
+  ComposioHQ/awesome-claude-skills:
+    score: 7.0
+    why: "Catalog skill lớn; nguồn phát hiện skill để port sang Hermes."
+  K-Dense-AI/scientific-agent-skills:
+    score: 7.0
+    why: "~480 skill science đã kiểm chứng, cài được qua Hermes tap."
+  VoltAgent/awesome-openclaw-skills:
+    score: 6.0
+    why: "Index skill rộng; nhiều skill OpenClaw-specific cần adapt."
+  sickn33/agentic-awesome-skills:
+    score: 6.5
+    why: "Thư viện skill phong phú; có pattern memory/planning hữu ích."
+  reason-machines/ai-agent-skills:
+    score: 8.0
+    why: "Bot quét GitHub mỗi 30 phút tạo SKILL.md; có thể feed thẳng radar."
   Aitherium/awskills:
     score: 8.0
-    why: "Portable agent skills pack; several directly useful (git hygiene, local inference)."
+    why: "Skill pack portable; vài skill git-hygiene/local-inference dùng ngay."
   mcpbeat/best-mcp-servers:
     score: 7.5
-    why: "Ranks MCP servers by uptime + installs; best discovery source for MCP tooling."
+    why: "Xếp hạng MCP server theo uptime + installs thật; nguồn discovery tốt."
   modelcontextprotocol/servers:
     score: 7.0
-    why: "Reference MCP implementations; useful as templates for our own servers."
+    why: "Catalog tham chiếu; chọn từng server khi cần nguồn dữ liệu cụ thể."
   ChromeDevTools/chrome-devtools-mcp:
     score: 8.5
-    why: "Lets Hermes debug/profile pages in Chrome; pairs with our bridge workflow."
+    why: "Cho Hermes debug/profile trang trong Chrome; ghép với chrome-bridge."
   microsoft/playwright-mcp:
-    score: 7.5
-    why: "Real browser automation via MCP; alternative path to chrome-bridge."
+    score: 5.0
+    why: "Chồng lấn chrome-bridge hiện có; chỉ theo dõi tới khi thiếu capability."
   upstash/context7:
     score: 7.0
-    why: "Up-to-date library docs for agents; reduces hallucinated APIs."
+    why: "Docs thư viện cập nhật cho agent; giảm API hallucination."
   github/github-mcp-server:
     score: 8.5
-    why: "Direct repo/issue/Actions access; our deploys and reviews depend on this."
+    why: "Truy cập repo/issue/Actions thật; deploy & review đều dựa vào."
   headroomlabs-ai/headroom:
     score: 8.0
-    why: "Token compression for tool outputs; cuts our daily context cost."
+    why: "Nén token tool output/logs; cắt chi phí context mỗi phiên."
+  mem0ai/mem0:
+    score: 6.5
+    why: "Memory đa phiên; cần kế hoạch tích hợp cho stock-longterm-lab."
+  thedotmack/claude-mem:
+    score: 7.0
+    why: "Memory cross-session, quảng cáo hỗ trợ Hermes; verify quyền/trữ liệu trước."
