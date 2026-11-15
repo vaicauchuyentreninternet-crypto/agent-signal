@@ -48,10 +48,16 @@
   }
 
   function renderBrief(data) {
-    var all = [];
+    // Một repo có thể thuộc nhiều category (cùng query trả về); bản tin chỉ liệt kê một lần,
+    // giữ bản có điểm cao nhất — khớp với scripts/digest.py.
+    var byName = {};
     data.categories.forEach(function (c) {
-      c.repos.forEach(function (r) { all.push({ cat: c.title, r: r }); });
+      c.repos.forEach(function (r) {
+        var prev = byName[r.full_name];
+        if (!prev || (r.score || 0) > (prev.r.score || 0)) byName[r.full_name] = { cat: c.title, r: r };
+      });
     });
+    var all = Object.keys(byName).map(function (k) { return byName[k]; });
     all.sort(function (a, b) {
       var da = a.r.delta_7d == null ? -Infinity : a.r.delta_7d;
       var db = b.r.delta_7d == null ? -Infinity : b.r.delta_7d;
