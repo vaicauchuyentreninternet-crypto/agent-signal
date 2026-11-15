@@ -94,3 +94,17 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Inbox — lệnh cho Hermes */
+.inbox { border-top: 1px solid var(--line); padding-top: 34px; margin-top: 50px; }
+.inbox-form { display: grid; gap: 12px; max-width: 720px; }
+.inbox-form label { display: grid; gap: 6px; font-size: 13.5px; color: var(--muted); }
+.inbox-form input, .inbox-form select {
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 11px; font: inherit; font-size: 14.5px;
+}
+.inbox-form input:focus, .inbox-form select:focus { outline: 2px solid var(--acc); outline-offset: 1px; }
+.inbox-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.inbox-actions .ghost-btn { cursor: pointer; background: var(--panel); }
+.inbox-actions .ghost-btn:hover { border-color: var(--acc); }

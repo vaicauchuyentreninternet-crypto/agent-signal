@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agent Signal — Daily GitHub Radar for Agent Tooling</title>
-<meta name="description" content="A morning radar of trending GitHub projects for AI agents: skills, frameworks, context/memory tools, MCP servers and the Hermes ecosystem — scored against our actual stack.">
+<title>Agent Signal — Radar GitHub hằng ngày cho agent tooling</title>
+<meta name="description" content="Bản tin sáng về các dự án GitHub đang có cho AI agents: skills, framework, context/memory, MCP servers và hệ sinh thái Hermes — chấm điểm theo đúng stack ta đang dùng.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Agent Signal — Daily GitHub Radar">
-<meta property="og:description" content="Trending agent tooling on GitHub, refreshed every morning at 05:00 ICT.">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Agent Signal — Radar GitHub hằng ngày cho agent tooling">
+<meta property="og:description" content="Cập nhật mỗi sáng 05:00 ICT: tool/skill mới nổi trên GitHub, kèm điểm số và ghi chú vì sao nên dùng.">
 <link rel="canonical" href="https://vaicauchuyentreninternet-crypto.github.io/agent-signal/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
@@ -16,32 +17,61 @@
 <header class="site-head">
   <div class="wrap head-grid">
     <div>
-      <p class="kicker">Morning radar · 05:00 ICT</p>
+      <p class="kicker">Radar buổi sáng · 05:00 giờ VN</p>
       <h1>Agent Signal</h1>
-      <p class="lede">Trending GitHub tooling for AI agents — scored against the stack we actually run.</p>
+      <p class="lede">Công cụ GitHub đang có dành cho AI agent — chấm điểm theo đúng hệ thống ta đang chạy.</p>
     </div>
     <div class="head-meta">
-      <p class="stamp">Updated <time id="updated" datetime="">—</time></p>
-      <p class="stamp dim">Source: GitHub Search API · no token on first run</p>
-      <a class="ghost-btn" href="methodology.html">Methodology &amp; scoring</a>
+      <p class="stamp">Cập nhật <time id="updated" datetime="">—</time></p>
+      <p class="stamp dim">Nguồn: GitHub Search API · không token ở lần đầu</p>
+      <a class="ghost-btn" href="methodology.html">Phương pháp &amp; cách chấm điểm</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="brief" aria-labelledby="brief-h">
-    <h2 id="brief-h">Morning brief</h2>
-    <ol id="brief-list" class="brief-list"><li>Loading…</li></ol>
+    <h2 id="brief-h">Tóm tắt sáng</h2>
+    <ol id="brief-list" class="brief-list"><li>Đang tải…</li></ol>
   </section>
 
   <div id="sections"></div>
+
+  <section class="inbox block" aria-labelledby="inbox-h">
+    <h2 id="inbox-h">＋ Lệnh cho Hermes</h2>
+    <p class="blurb">
+      Thêm repo/tool kèm hành động. Hermes sẽ tải về, cài đặt hoặc tích hợp,
+      rồi gửi kết quả + bản ghi cho ChatGPT cập nhật nguồn dữ liệu của nó.
+    </p>
+    <form id="cmd-form" class="inbox-form">
+      <label>Repo / tool
+        <input id="cmd-repo" type="text" required placeholder="vd. anthropics/skills hoặc link GitHub">
+      </label>
+      <label>Hành động
+        <select id="cmd-action">
+          <option>Cài đặt &amp; tích hợp</option>
+          <option>Clone về để học</option>
+          <option>Viết skill / công cụ mới</option>
+          <option>Chỉ ghi nhớ nguồn dữ liệu</option>
+        </select>
+      </label>
+      <label>Chi tiết
+        <input id="cmd-note" type="text" placeholder="vd. cài qua hermes skills tap, chạy test, ghi vào memory">
+      </label>
+      <div class="inbox-actions">
+        <button type="submit" class="ghost-btn" id="btn-issue">Tạo GitHub Issue (khuyên dùng)</button>
+        <button type="button" class="ghost-btn" id="btn-copy">Copy lệnh để gửi Hermes</button>
+      </div>
+      <p id="cmd-out" class="dim" role="status"></p>
+    </form>
+  </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap foot-grid">
-    <p>Auto-generated from public GitHub data. Scores are <strong>not endorsements</strong> — see
-      <a href="methodology.html">methodology</a> for the exact formula and its limits.</p>
-    <p class="dim">Curated fit scores live in <code>config/fit_scores.yaml</code>. Refresh: daily 22:00 UTC via GitHub Actions.</p>
+    <p>Tự động sinh từ dữ liệu GitHub công khai. Điểm số <strong>không phải lời cậy nhận</strong> — xem
+      <a href="methodology.html">phương pháp</a> để biết công thức và giới hạn.</p>
+    <p class="dim">Điểm fit do curator chấm nằm ở <code>config/fit_scores.yaml</code>. Tự động làm mới: 22:00 UTC mỗi ngày qua GitHub Actions.</p>
   </div>
 </footer>
 

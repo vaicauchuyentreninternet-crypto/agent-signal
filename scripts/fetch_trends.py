@@ -55,25 +55,25 @@ CATEGORIES = [
     {
         "key": "agent-skills",
         "title": "Agent Skills",
-        "blurb": "Composable skill modules and registries for coding agents.",
+        "blurb": "Các module skill tái sử dụng và registry cho coding agent.",
         "query": "topic:agent-skills+stars:>200",
     },
     {
         "key": "agent-frameworks",
         "title": "Agent Frameworks",
-        "blurb": "Harnesses, orchestration and runtime frameworks for autonomous agents.",
+        "blurb": "Harness, orchestration và runtime cho agent tự chủ.",
         "query": "topic:ai-agents+stars:>1000",
     },
     {
         "key": "context-memory",
         "title": "Context & Memory",
-        "blurb": "Token compression, long-term memory and retrieval layers for agents.",
+        "blurb": "Nén token, bộ nhớ dài hạn và lớp truy xuất cho agent.",
         "query": "memory+context+agents+LLM+stars:>300",
     },
     {
         "key": "mcp-servers",
         "title": "MCP Servers",
-        "blurb": "Model Context Protocol servers that give agents real tool access.",
+        "blurb": "Máy chủ Model Context Protocol — nối agent vào tool thật.",
         "query": "topic:mcp-servers+stars:>100",
     },
 ]
@@ -273,7 +273,7 @@ def main():
     sections.append({
         "key": "hermes-ecosystem",
         "title": "Hermes Ecosystem",
-        "blurb": "The stack we run on: agent runtime, skills taps, MCP discovery.",
+        "blurb": "Hệ sinh thái ta đang chạy: runtime Hermes, skills tap, MCP discovery.",
         "query": "curated list (hand-maintained)",
         "count": len(rows),
         "repos": rows,

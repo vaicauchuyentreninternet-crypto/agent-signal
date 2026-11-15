@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Methodology — Agent Signal</title>
-<meta name="description" content="How Agent Signal collects and scores GitHub projects: sources, formula, curated fit, and known limits.">
+<title>Phương pháp — Agent Signal</title>
+<meta name="description" content="Agent Signal lấy dữ liệu và chấm điểm dự án GitHub như thế nào: nguồn, công thức, điểm fit curator và giới hạn.">
 <link rel="canonical" href="https://vaicauchuyentreninternet-crypto.github.io/agent-signal/methodology.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
@@ -13,43 +13,42 @@
 <header class="site-head">
   <div class="wrap">
     <p class="kicker">Agent Signal</p>
-    <h1>Methodology</h1>
-    <p class="lede">Everything here is reproducible from public GitHub data. No secret signals, no paid rankings.</p>
+    <h1>Phương pháp &amp; cách chấm điểm</h1>
+    <p class="lede">Mọi thứ trên đây tái lập được từ dữ liệu GitHub công khai. Không tín hiệu bí mật, không xếp hạng trả phí.</p>
   </div>
 </header>
 <main class="wrap">
   <section class="block">
-    <h2>Sources</h2>
+    <h2>Nguồn dữ liệu</h2>
     <p class="blurb">
-      GitHub Search API (<code>search/repositories</code>, sorted by stars) plus the REST
-      <code>/repos</code> endpoint for a small hand-maintained Hermes ecosystem list.
-      Queries are stored in <code>scripts/fetch_trends.py</code>; a token is optional
-      (unauthenticated rate limits apply, ~10 searches/min).
+      GitHub Search API (<code>search/repositories</code>, sắp theo sao) cộng REST <code>/repos</code>
+      cho danh sách Hermes ecosystem curate tay. Các query nằm trong <code>scripts/fetch_trends.py</code>;
+      token là tùy chọn (không token thì giới hạn ~10 tìm kiếm/phút).
     </p>
   </section>
   <section class="block">
-    <h2>Score formula (0–100)</h2>
+    <h2>Công thức điểm (0–100)</h2>
     <p class="blurb">
-      <strong>Momentum 0–40:</strong> stars gained over the last 7 days, from daily snapshots in
-      <code>data/history.json</code>. Until history exists, momentum is unknown and the total is marked provisional.<br>
-      <strong>Activity 0–25:</strong> push recency (12 pts if pushed within 7 days), fork count, issue load.<br>
-      <strong>Fit 0–25:</strong> curated 0–10 × 2.5. Curated entries live in
-      <code>config/fit_scores.yaml</code> with a one-line reason tied to Hermes or our current projects.
-      Uncurated repos get a neutral 5.0 and are labelled “not curated yet”.<br>
-      <strong>Docs 0–10:</strong> known license + substantive description.
+      <strong>Momentum 0–40:</strong> sao tăng trong 7 ngày, tính từ snapshot lịch sử trong
+      <code>data/history.json</code>. Chưa có lịch sử thì momentum chưa biết và tổng điểm được đánh dấu tạm.<br>
+      <strong>Activity 0–25:</strong> độ mới <code>pushed_at</code> (12 điểm nếu push trong 7 ngày), forks, tải issue.<br>
+      <strong>Fit 0–25:</strong> điểm curator 0–10 × 2.5. Curator nhập tay vào
+      <code>config/fit_scores.yaml</code> kèm lý do gắn với Hermes hoặc dự án hiện tại.
+      Chưa curate nhận 5.0 trung tính và ghi rõ “chưa curate”.<br>
+      <strong>Docs 0–10:</strong> license known + mô tả đủ nội dung.
     </p>
   </section>
   <section class="block">
-    <h2>Known limits</h2>
+    <h2>Giới hạn đã biết</h2>
     <p class="blurb">
-      • Stars measure attention, not quality — a marketing spike can outrank a solid tool.<br>
-      • Search queries catch repos by topic keywords; relevant projects without topics can be missed.<br>
-      • Delta requires history: the first run after setup always shows NEW.<br>
-      • Fit scores are our own judgement for our stack, not community consensus.<br>
-      • Scores are auto-generated and must not be read as endorsements.
+      • Số sao đo sự chú ý, không đo chất lượng — chuỗi marketing có thể vượt mặt tool thật tốt.<br>
+      • Query theo topic từ khoá có thể bỏ sót dự án không gắn topic phù hợp.<br>
+      • Delta cần lịch sử: lần chạy đầu tiên luôn hiện MỚI.<br>
+      • Điểm fit là phán đoán của mình cho stack của mình, không phải đồng thuận cộng đồng.<br>
+      • Điểm tự động sinh — không được coi là lời cậy nhận.
     </p>
   </section>
-  <p><a class="ghost-btn" href="index.html">← Back to the radar</a></p>
+  <p><a class="ghost-btn" href="index.html">← Về radar</a></p>
 </main>
 <script defer src="js/main.js"></script>
 </body>

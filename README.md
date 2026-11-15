@@ -1,34 +1,43 @@
 # Agent Signal
 
-A morning radar of trending GitHub tooling for AI agents — refreshed daily at **05:00 ICT**
-(22:00 UTC) by a GitHub Actions job and published to GitHub Pages.
+Radar buổi sáng về công cụ GitHub cho AI agent — tự động làm mới **05:00 giờ VN** (22:00 UTC)
+bằng GitHub Actions và đưa lên GitHub Pages.
 
-Sections: Agent Skills · Agent Frameworks · Context & Memory · MCP Servers · Hermes Ecosystem.
+Các mục: Agent Skills · Agent Frameworks · Context & Memory · MCP Servers · Hermes Ecosystem.
 
-Every repo carries:
-- live stars + 7-day delta (from daily snapshots in `data/history.json`)
-- an auto-score 0–100 with a visible formula
-- a short “Why here” note when it is curated against our stack (`config/fit_scores.yaml`)
+Mỗi repo có:
+- sao trực tiếp + delta 7 ngày (từ snapshot trong `data/history.json`)
+- điểm tự động 0–100 kèm công thức minh bạch
+- ghi chú "Vì sao phù hợp" khi repo được curate trong `config/fit_scores.yaml`
 
-## Run locally
+## Chạy cục bộ
 
 ```bash
-python3 -m http.server 8080 --bind 127.0.0.1   # from this folder
-python3 scripts/fetch_trends.py                # writes data/trends.json + history
+python3 -m http.server 8080 --bind 127.0.0.1   # từ thư mục này
+python3 scripts/fetch_trends.py                # ghi data/trends.json + history
 ```
 
-Open http://127.0.0.1:8080/index.html
+Mở http://127.0.0.1:8080/index.html
 
-Optional: set `GITHUB_TOKEN` (or keep `gh auth token` available) for higher API limits.
+Tùy chọn: đặt `GITHUB_TOKEN` (hoặc giữ `gh auth token`) để API limit cao hơn.
 
-## Scoring
+## Đường lệnh cho Hermes (inbox)
 
-`momentum 0–40 (7d star delta)` + `activity 0–25 (push recency, forks, issues)`
-+ `fit 0–25 (curated 0–10 × 2.5, default neutral 5.0)` + `docs 0–10 (license, description)`.
+Trang chủ có ô **“＋ Lệnh cho Hermes”**: bạn nhập repo/tool + hành động + chi tiết.
+Hai cách gửi:
+1. **Tạo GitHub Issue** — nút mở sẵn form issue của repo `agent-signal` với nội dung đã điền.
+   Hermes quét issue nhãn `hermes-command` mỗi sáng, tải repo về cài đặt/tích hợp,
+   rồi gửi kết quả + bản ghi cho ChatGPT để cập nhật nguồn dữ liệu của nó.
+2. **Copy lệnh** — dán thẳng vào chat Discord cho Hermes nếu bạn đang ngồi máy.
 
-Auto-generated; not endorsements. See [methodology](methodology.html).
+## Cách chấm điểm
 
-## Nightly job
+`momentum 0–40 (delta 7 ngày)` + `activity 0–25 (độ mới, forks, issues)`
++ `fit 0–25 (curator 0–10 × 2.5, mặc định 5.0)` + `docs 0–10 (license, mô tả)`.
 
-`.github/workflows/daily.yml` runs `scripts/fetch_trends.py`, commits changed data,
-and redeploys Pages. Safe to trigger manually via `workflow_dispatch`.
+Tự động sinh; không phải lời cậy nhận. Xem [phương pháp](methodology.html).
+
+## Job mỗi đêm
+
+`.github/workflows/daily.yml` chạy `scripts/fetch_trends.py`, commit data nếu đổi,
+Pages tự deploy từ nhánh `main`. Chạy tay được qua `workflow_dispatch`.
