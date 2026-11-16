@@ -46,6 +46,8 @@ nguyên vì UI và `main.js` đang dùng. Không cần migrate dữ liệu.
 ## 5. Kiểm chứng (chạy thật 2026-11-16)
 
 - 46/46 repo có đủ `fit_note`, `score`, `score_parts`.
-- 10 repo được curate, không repo nào giữ note mặc định.
+- 9 repo được curate (`fit` 5,0–10,0); 36 repo chưa curate giữ note mặc định
+  `Not curated yet…` — hợp lệ theo mục 1 (chưa curate thì không khai báo `why`).
+- `curated=true` mà vẫn giữ note mặc định: 0xNyk/awesome-hermes-agent, openai/skills.
 - `score_parts.fit == fit × 2.5` (lệch chỉ do làm tròn 1 chữ số thập phân).
 - `delta_7d` đang `null` cho bất kỳ repo nào vì `history.json` mới có 1 snapshot — hợp lệ, không bịa.
