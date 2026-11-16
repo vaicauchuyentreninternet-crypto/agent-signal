@@ -73,7 +73,7 @@
      ],
      "fit": 9.0,
      "fit_curated": true,
-     "fit_note": "\"Chuẩn Agent Skills; cài tap vào Hermes, lọc skill cụ thể trước khi cài.\"",
+     "fit_note": "Chuẩn Agent Skills; cài tap vào Hermes, lọc skill cụ thể trước khi cài.",
      "score": 81,
      "score_parts": {
       "momentum": null,
@@ -137,7 +137,7 @@
      ],
      "fit": 8.5,
      "fit_curated": true,
-     "fit_note": "\"Pattern kỹ thuật production; dùng ngay cho code-review/planning loop.\"",
+     "fit_note": "Pattern kỹ thuật production; dùng ngay cho code-review/planning loop.",
      "score": 90,
      "score_parts": {
       "momentum": null,
@@ -483,7 +483,7 @@
      ],
      "fit": 10.0,
      "fit_curated": true,
-     "fit_note": "\"Chính runtime Hermes ta đang chạy; theo dõi release và tương thích gateway.\"",
+     "fit_note": "Chính runtime Hermes ta đang chạy; theo dõi release và tương thích gateway.",
      "score": 90,
      "score_parts": {
       "momentum": null,
@@ -743,7 +743,7 @@
      ],
      "fit": 7.0,
      "fit_curated": true,
-     "fit_note": "\"Memory cross-session, quảng cáo hỗ trợ Hermes; verify quyền/trữ liệu trước.\"",
+     "fit_note": "Memory cross-session, quảng cáo hỗ trợ Hermes; verify quyền/trữ liệu trước.",
      "score": 88,
      "score_parts": {
       "momentum": null,
@@ -790,7 +790,7 @@
      ],
      "fit": 6.5,
      "fit_curated": true,
-     "fit_note": "\"Memory đa phiên; cần kế hoạch tích hợp cho stock-longterm-lab.\"",
+     "fit_note": "Memory đa phiên; cần kế hoạch tích hợp cho stock-longterm-lab.",
      "score": 77,
      "score_parts": {
       "momentum": null,
@@ -1584,7 +1584,7 @@
      ],
      "fit": 10.0,
      "fit_curated": true,
-     "fit_note": "\"Chính runtime Hermes ta đang chạy; theo dõi release và tương thích gateway.\"",
+     "fit_note": "Chính runtime Hermes ta đang chạy; theo dõi release và tương thích gateway.",
      "score": 90,
      "score_parts": {
       "momentum": null,
@@ -1607,7 +1607,7 @@
      "topics": [],
      "fit": 8.0,
      "fit_curated": true,
-     "fit_note": "\"Skill pack portable; vài skill git-hygiene/local-inference dùng ngay.\"",
+     "fit_note": "Skill pack portable; vài skill git-hygiene/local-inference dùng ngay.",
      "score": 82,
      "score_parts": {
       "momentum": null,
@@ -1630,7 +1630,7 @@
      "topics": [],
      "fit": 8.0,
      "fit_curated": true,
-     "fit_note": "\"Bot quét GitHub mỗi 30 phút tạo SKILL.md; có thể feed thẳng radar.\"",
+     "fit_note": "Bot quét GitHub mỗi 30 phút tạo SKILL.md; có thể feed thẳng radar.",
      "score": 67,
      "score_parts": {
       "momentum": null,
@@ -1664,7 +1664,7 @@
      ],
      "fit": 7.5,
      "fit_curated": true,
-     "fit_note": "\"Xếp hạng MCP server theo uptime + installs thật; nguồn discovery tốt.\"",
+     "fit_note": "Xếp hạng MCP server theo uptime + installs thật; nguồn discovery tốt.",
      "score": 80,
      "score_parts": {
       "momentum": null,
@@ -1746,7 +1746,7 @@
      ],
      "fit": 9.0,
      "fit_curated": true,
-     "fit_note": "\"Chuẩn Agent Skills; cài tap vào Hermes, lọc skill cụ thể trước khi cài.\"",
+     "fit_note": "Chuẩn Agent Skills; cài tap vào Hermes, lọc skill cụ thể trước khi cài.",
      "score": 81,
      "score_parts": {
       "momentum": null,

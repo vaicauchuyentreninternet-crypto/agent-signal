@@ -123,6 +123,14 @@ def search(q: str, per_page: int = 10):
     )
 
 
+def _unquote(s: str) -> str:
+    """Reader này không parse YAML quote -> tự cắt cặp " hoặc ' bao quanh giá trị."""
+    s = (s or "").strip()
+    if len(s) >= 2 and s[0] == s[-1] and s[0] in "\"'":
+        return s[1:-1].strip()
+    return s
+
+
 def load_fit() -> dict:
     """Tiny YAML reader for the flat fit_scores map used here."""
     out = {}
@@ -143,7 +151,7 @@ def load_fit() -> dict:
         elif line.startswith("    ") and ":" in line and current:
             k, v = line.strip().split(":", 1)
             out[current][k.strip()] = v.strip()
-    return {k: (float(v.get("score", 5.0)), v.get("why", "")) for k, v in out.items()}
+    return {k: (float(v.get("score", 5.0)), _unquote(v.get("why", ""))) for k, v in out.items()}
 
 
 def load_history() -> dict:

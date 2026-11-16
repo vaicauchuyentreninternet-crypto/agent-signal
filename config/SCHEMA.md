@@ -52,3 +52,4 @@ nguyên vì UI và `main.js` đang dùng. Không cần migrate dữ liệu.
 - `curated=true` mà vẫn giữ note mặc định: `0xNyk/awesome-hermes-agent`, `openai/skills`.
 - `score_parts.fit == fit × 2.5` (lệch chỉ do làm tròn 1 chữ số thập phân).
 - `delta_7d` đang `null` cho cả 46 entry vì `history.json` mới có 3 snapshot (14–16/11), chưa đủ 7 ngày — hợp lệ, không bịa.
+- `fit_note` đã làm sạch dấu `"` bao quanh ở 10 entry (reader YAML tự viết giữ nguyên quote) — `scripts/fetch_trends.py` thêm `_unquote()`, `trends.json` migrate, chỉ `fit_note` đổi, 36 field còn lại giữ nguyên.
