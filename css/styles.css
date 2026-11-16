@@ -108,3 +108,25 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size
 .inbox-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
 .inbox-actions .ghost-btn { cursor: pointer; background: var(--panel); }
 .inbox-actions .ghost-btn:hover { border-color: var(--acc); }
+
+/* ============================================================
+   QA fixes — 2026-11-16 (chỉ THÊM, không sửa/xoá rule cũ)
+   Các rule dưới đè trong phạm vi hẹp để sửa lỗi chí mạng/AA.
+   ============================================================ */
+/* (1) Ở <=640px, `1fr` = minmax(auto,1fr); min-content của card lớn hơn
+       khung nên trang tràn ngang 26px ở 320px. minmax(0,1fr) cho phép
+       track co lại bằng khung. */
+@media (max-width: 640px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+/* (2) Tên repo dài không có khoảng trắng (vd modelcontextprotocol/registry)
+       làm min-content card = 317px, đẩy track MCP Servers ra 316.891px. */
+.card-name { overflow-wrap: anywhere; }
+/* (3) Contrast: --faint (#74889a) trên nền chip --panel-2 (#1b232c) = 4.33,
+       dưới WCAG AA 4.5. --muted (#9fb0bd) đạt ~8. */
+.chip { color: var(--muted); }
+/* (4) button mặc định lấy font Arial của trình duyệt, lệch hệ font trang. */
+.ghost-btn { font-family: inherit; }
+/* (5) Phản hồi hover tức thì -> thêm chuyển màu 150ms; bị
+       prefers-reduced-motion tắt hoàn toàn (rule * ở trên). */
+.card { transition: border-color 150ms ease; }
+.ghost-btn { transition: border-color 150ms ease, color 150ms ease; }
+.card-name a { transition: color 150ms ease; }

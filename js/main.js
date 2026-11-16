@@ -4,6 +4,16 @@
 
   var fmt = function (n) { return n == null ? "—" : Number(n).toLocaleString("vi-VN"); };
 
+  // Thời điểm cập nhật hiển thị theo giờ Việt Nam, trong khi thuộc tính
+  // `datetime` giữ nguyên giá trị UTC chuẩn (máy đọc/SEO đọc được).
+  function fmtStamp(d) {
+    return d.toLocaleString("vi-VN", {
+      timeZone: "Asia/Ho_Chi_Minh", weekday: "short", day: "2-digit",
+      month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+      second: "2-digit"
+    }) + " (ICT)";
+  }
+
   function scoreClass(s) {
     if (s == null) return "low";
     return s >= 70 ? "hi" : s >= 50 ? "mid" : "low";
@@ -94,7 +104,7 @@
     .then(function (data) {
       var t = document.getElementById("updated");
       var d = new Date(data.generated_at);
-      t.textContent = isNaN(d.getTime()) ? data.generated_at : d.toUTCString().replace("GMT", "UTC");
+      t.textContent = isNaN(d.getTime()) ? data.generated_at : fmtStamp(d);
       t.setAttribute("datetime", data.generated_at || "");
       renderBrief(data);
       renderSections(data);
